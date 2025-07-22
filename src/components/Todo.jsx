@@ -25,6 +25,12 @@ const Todo = () => {
     console.log("work State:", work);
   };
 
+   const deleteWork = (value)=> {
+    const updatedwork= work.filter((curWork)=> curWork !== value) 
+    setWork(updatedwork);
+   } ;
+   
+
   return (
     <div className="min-h-screen flex bg-gray-400 items-center justify-center p-4">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
@@ -60,7 +66,7 @@ const Todo = () => {
 <button className="border bg-amber-300 rounded-4xl cursor-pointer text-right">
                     <MdCheck size={"24px"} />
                   </button>
-                  <button className="border bg-amber-300 rounded-4xl cursor-pointer text-right">
+                  <button className="border bg-amber-300 rounded-4xl cursor-pointer text-right" onClick={()=>deleteWork(curWork)}>
                     <MdDeleteForever size={"24px"} />
                   </button>
                   </div>
